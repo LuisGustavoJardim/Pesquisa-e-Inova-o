@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora Financeira</h1>
+    Insira o valor de venda da saca de soja: <input id="valor" type="text">
+    <br>
+    Insira a quantidade de saca de soja armazenada: <input id="quantidade" type="text">
+    <br>
+    <button onclick="calc()">Calcular</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+    <script>
+        function calc() {
+            var total = valor.value * quantidade.value;
+            var desperdicio = total * 0.52; 
+            var projeto = total * 0.30;
+            var dif = desperdicio - projeto;
+
+            div_msg.innerHTML = `Você tem uma perda no valor de 52% em sua safra resultando o valor de R$${desperdicio}. <br>
+            Com o nosso projeto esse valor diminuiria para R$${projeto}, reduzindo para 30%. <br>
+            Tendo como lucro a mais o valor de R$${dif}.`
+        }
+    </script>
